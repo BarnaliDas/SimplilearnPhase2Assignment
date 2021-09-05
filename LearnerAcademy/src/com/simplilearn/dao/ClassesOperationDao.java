@@ -51,5 +51,26 @@ public class ClassesOperationDao {
         }
 		return classList;
 	}
+	public Classes getClassbyName(String name){
+		List<Classes> c1=null;
+		Transaction transaction = null;
+        try {
+            // start a transaction
+        	Session session = HibernateConfiguration.getSessionFactory().openSession();
+            transaction = session.beginTransaction();
+            
+            // save the class object
+            c1=session.createQuery("from Classes where className= '"+name+"'").getResultList();
+           
+            // commit transaction
+            transaction.commit();
+        } catch (Exception e) {
+            if (transaction != null) {
+                transaction.rollback();
+            }
+            e.printStackTrace();
+        }
+		return c1.get(0);
+	}
 
 }

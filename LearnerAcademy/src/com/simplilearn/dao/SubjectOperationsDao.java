@@ -51,6 +51,29 @@ public class SubjectOperationsDao {
 		return subjectList;
 	}
 
-
+	public Subjects getSubjectsbyName(String name){
+		List<Subjects> subjectList= null;
+		Subjects s1=null;
+		Transaction transaction = null;
+        try {
+            // start a transaction
+        	Session session = HibernateConfiguration.getSessionFactory().openSession();
+            transaction = session.beginTransaction();
+            // save the class object
+            subjectList=session.createQuery("from Subjects where subjectName= '"+name+"'").getResultList();
+           
+            // commit transaction
+            transaction.commit();
+            if(subjectList.size()>0){
+            	s1=	subjectList.get(0);
+            }
+        } catch (Exception e) {
+            if (transaction != null) {
+                transaction.rollback();
+            }
+            e.printStackTrace();
+        }
+		return s1;
+	}
 
 }

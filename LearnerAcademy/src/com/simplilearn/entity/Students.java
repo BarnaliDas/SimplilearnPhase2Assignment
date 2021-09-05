@@ -26,7 +26,7 @@ public class Students {
 	@ManyToOne(cascade={CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH},
 			fetch=FetchType.LAZY)
 	@JoinColumn(name="lastm_class_id")
-	Classes classes;
+	Classes studentClasses;
 	
 	public Students(){
 		
@@ -54,11 +54,11 @@ public class Students {
 
 	
 	public Classes getClasses() {
-		return classes;
+		return studentClasses;
 	}
 
 	public void setClasses(Classes classes) {
-		this.classes = classes;
+		this.studentClasses = classes;
 	}
 
 	@Override

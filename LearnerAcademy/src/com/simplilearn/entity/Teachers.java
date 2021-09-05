@@ -13,6 +13,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.Generated;
@@ -30,7 +31,7 @@ public class Teachers {
 	 String teacherName;
 	
 	@OneToMany(mappedBy ="teachers")
-	List<SubjectClassMap> subjectClassMaps;
+	List<TeacherSubjectMap> teacherSubjectMap;
 	
 	public Teachers(){
 		
@@ -57,18 +58,16 @@ public class Teachers {
 		this.teacherName = teacherName;
 	}
 
-	public List<SubjectClassMap> getSubjectClassMaps() {
-		return subjectClassMaps;
+	public List<TeacherSubjectMap> getTeacherSubjectMap() {
+		return teacherSubjectMap;
 	}
 
-	public void setSubjectClassMaps(List<SubjectClassMap> subjectClassMaps) {
-		this.subjectClassMaps = subjectClassMaps;
+	public void setTeacherSubjectMap(List<TeacherSubjectMap> teacherSubjectMap) {
+		this.teacherSubjectMap = teacherSubjectMap;
 	}
-	public void addsubjectClassMaps(SubjectClassMap scm){
-		if(subjectClassMaps ==null){
-			subjectClassMaps=new ArrayList<SubjectClassMap>();
-		}
-		subjectClassMaps.add(scm);
-		scm.setTeachers(this);
-	}
+
+	
+
+	
+	
 }

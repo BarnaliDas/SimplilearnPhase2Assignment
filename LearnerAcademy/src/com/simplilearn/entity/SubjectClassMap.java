@@ -2,23 +2,23 @@ package com.simplilearn.entity;
 
 import java.util.List;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="la_subject_class_mapping")
 public class SubjectClassMap {
-	
-	public SubjectClassMap() {
-		}
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name="lascm_id")
 	int id;
 	
 	@ManyToOne
@@ -29,10 +29,17 @@ public class SubjectClassMap {
 	@JoinColumn(name="lascm_subject_id")
 	Subjects subject;
 	
-	@ManyToOne
-	@JoinColumn(name="lascm_teacher_id")
-	Teachers teachers;
+	@OneToOne(mappedBy="scm")
+	TeacherSubjectMap tsm;
+	
+	public SubjectClassMap() {
+	}
 
+	public SubjectClassMap(Classes classname, Subjects subject) {
+		this.classname=classname;
+		this.subject=subject;
+	}
+	
 	public int getId() {
 		return id;
 	}
@@ -57,13 +64,14 @@ public class SubjectClassMap {
 		this.subject = subject;
 	}
 
-	public Teachers getTeachers() {
-		return teachers;
+	public TeacherSubjectMap getTsm() {
+		return tsm;
 	}
 
-	public void setTeachers(Teachers teachers) {
-		this.teachers = teachers;
+	public void setTsm(TeacherSubjectMap tsm) {
+		this.tsm = tsm;
 	}
+
 	
 	
 

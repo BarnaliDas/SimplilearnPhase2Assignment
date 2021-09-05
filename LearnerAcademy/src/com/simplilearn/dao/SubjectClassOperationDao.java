@@ -8,12 +8,13 @@ import org.hibernate.Transaction;
 import com.simplilearn.config.HibernateConfiguration;
 import com.simplilearn.entity.Classes;
 import com.simplilearn.entity.SubjectClassMap;
-import com.simplilearn.entity.TeacherSubjectMap;
+import com.simplilearn.entity.Subjects;
 import com.simplilearn.entity.Teachers;
 
-public class TeacherSubjectClassOperationDao {
+public class SubjectClassOperationDao {
+
 	
-	public void saveTeacherSubjectMapping(Teachers teacher,SubjectClassMap subClass ){
+	public void saveSubjectClassMapping(Subjects sub, Classes classes){
 		Transaction transaction = null;
         try {
             // start a transaction
@@ -21,8 +22,8 @@ public class TeacherSubjectClassOperationDao {
             transaction = session.beginTransaction();
             // save the class object
            
-            TeacherSubjectMap tsm = new TeacherSubjectMap(teacher, subClass);
-            session.save(tsm);
+           SubjectClassMap scm = new SubjectClassMap(classes,sub);
+            session.save(scm);
             // commit transaction
             transaction.commit();
         } catch (Exception e) {
@@ -31,28 +32,29 @@ public class TeacherSubjectClassOperationDao {
             }
             e.printStackTrace();
         }
+        
 	}
-
-	public List<Teachers> getTeacherforClassName(Classes classes){
-		List<Teachers> t=null;
+	
+	
+	public List<Subjects> getSubjectsForClassMapping(Classes classes){
+		List<Subjects> subjectList=null;
 		Transaction transaction = null;
         try {
             // start a transaction
         	Session session = HibernateConfiguration.getSessionFactory().openSession();
             transaction = session.beginTransaction();
             // save the class object
-            
-            t=session.createQuery("from TeacherSubjectMap  where scm in( select id from SubjectClassMap where subject = '"+classes.getClassName()+"')").getResultList();
+            subjectList=session.createQuery("from SubjectClassMap  where classname ="+classes.getId()).getResultList();
             // commit transaction
             transaction.commit();
         } catch (Exception e) {
             if (transaction != null) {
-                transaction.rollback(); 
+                transaction.rollback();
             }
             e.printStackTrace();
         }
-		
-		
-		return t;
+		return subjectList;
 	}
+	
+	
 }

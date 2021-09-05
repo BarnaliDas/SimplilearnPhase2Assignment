@@ -21,11 +21,9 @@ public class Classes {
 	@Column(name="lacm_class_name")
 	 String className;
 	
-	@OneToMany(mappedBy="classes")
+	@OneToMany(mappedBy="studentClasses")
 	List<Students> studentlist;
 	
-	@OneToMany(mappedBy="classes")
-	 List<Subjects> subjects;
 	
 	@OneToMany(mappedBy="classname")
 	List<SubjectClassMap> subjectClassMap;
@@ -59,13 +57,7 @@ public class Classes {
 		return "Classes [id=" + id + ", className=" + className + "]";
 	}
 
-	public List<Subjects> getSubjects() {
-		return subjects;
-	}
-
-	public void setSubjects(List<Subjects> subjects) {
-		this.subjects = subjects;
-	}
+	
 	public void addStudent(Students students){
 		if(studentlist == null){
 			studentlist=new ArrayList<Students>();

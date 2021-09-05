@@ -29,11 +29,6 @@ public class Subjects {
 	 
 	 @Column(name="lasm_subject_name")
 	  String subjectName;
-	 
-	 @ManyToMany(cascade={CascadeType.REFRESH, CascadeType.MERGE, CascadeType.PERSIST}, fetch=FetchType.LAZY)
-	 @JoinTable(name="la_sub_class_mapping", 
-	 joinColumns=@JoinColumn(name="lascm_subject_id"), inverseJoinColumns=@JoinColumn(name="lascm_class_id"))
-	  List<Classes> classes;
 	
 	 @OneToMany(mappedBy="subject")
 	 List<SubjectClassMap> subjectClassMap;
@@ -62,20 +57,10 @@ public class Subjects {
 		this.subjectName = subjectName;
 	}
 
-	 
-		
-
+	
 		@Override
 		public String toString() {
 			return "Subjects [id=" + id + ", subjectName=" + subjectName + "]";
-		}
-
-		public List<Classes> getClasses() {
-			return classes;
-		}
-
-		public void setClasses(List<Classes> classes) {
-			this.classes = classes;
 		}
 
 		public List<SubjectClassMap> getSubjectClassMap() {
@@ -86,6 +71,6 @@ public class Subjects {
 			this.subjectClassMap = subjectClassMap;
 		}
 	 
-	 
+
 	 
 }

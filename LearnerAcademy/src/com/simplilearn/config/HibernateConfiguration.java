@@ -12,6 +12,7 @@ import com.simplilearn.entity.Classes;
 import com.simplilearn.entity.Students;
 import com.simplilearn.entity.SubjectClassMap;
 import com.simplilearn.entity.Subjects;
+import com.simplilearn.entity.TeacherSubjectMap;
 import com.simplilearn.entity.Teachers;
 
 public class HibernateConfiguration {
@@ -41,7 +42,7 @@ public class HibernateConfiguration {
 	    
 	    configuration.addAnnotatedClass(Classes.class).addAnnotatedClass(Subjects.class)
 	    .addAnnotatedClass(Students.class).addAnnotatedClass(Teachers.class).
-	    addAnnotatedClass(SubjectClassMap.class);
+	    addAnnotatedClass(SubjectClassMap.class).addAnnotatedClass(TeacherSubjectMap.class);
 	    
 	    ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder()
 	      .applySettings(configuration.getProperties()).build();
