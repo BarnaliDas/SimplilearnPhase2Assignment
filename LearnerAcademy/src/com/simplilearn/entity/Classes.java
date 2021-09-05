@@ -14,8 +14,8 @@ import javax.persistence.Table;
 @Table(name="la_class_master")
 public class Classes {
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="lasm_id")
+	//@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name="lacm_id")
 	 int id;
 	
 	@Column(name="lacm_class_name")

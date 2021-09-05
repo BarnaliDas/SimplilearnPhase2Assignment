@@ -11,9 +11,12 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="la_sub_class_mapping")
+@Table(name="la_subject_class_mapping")
 public class SubjectClassMap {
 	
+	public SubjectClassMap() {
+		}
+
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	int id;
