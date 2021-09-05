@@ -6,19 +6,18 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 import com.simplilearn.config.HibernateConfiguration;
-import com.simplilearn.entity.Subjects;
+import com.simplilearn.entity.Teachers;
 
-public class SubjectOperationsDao {
+public class TeachersOperationDao {
 
-	public void SaveSubjectDetails(Subjects subjectdtl){
+	public void SaveTeacherDetails(Teachers teacherdtl){
 		Transaction transaction = null;
         try {
             // start a transaction
         	Session session = HibernateConfiguration.getSessionFactory().openSession();
             transaction = session.beginTransaction();
             // save the class object
-           
-            session.save(subjectdtl);
+            session.save(teacherdtl);
             // commit transaction
             transaction.commit();
         } catch (Exception e) {
@@ -30,15 +29,15 @@ public class SubjectOperationsDao {
         
 	}
 	
-	public List<Subjects> getAllSubjects(){
-		List<Subjects> subjectList= null;
+	public List<Teachers> getAllTeachers(){
+		List<Teachers> teacherList= null;
 		Transaction transaction = null;
         try {
             // start a transaction
         	Session session = HibernateConfiguration.getSessionFactory().openSession();
             transaction = session.beginTransaction();
             // save the class object
-            subjectList=session.createQuery("from Subjects").getResultList();
+            teacherList=session.createQuery("from Teachers").getResultList();
            
             // commit transaction
             transaction.commit();
@@ -48,8 +47,12 @@ public class SubjectOperationsDao {
             }
             e.printStackTrace();
         }
-		return subjectList;
+		return teacherList;
 	}
+
+
+
+
 
 
 
