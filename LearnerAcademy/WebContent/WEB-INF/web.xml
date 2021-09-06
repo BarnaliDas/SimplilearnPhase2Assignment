@@ -9,4 +9,14 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  <servlet>
+    <description></description>
+    <display-name>CandidateServlet</display-name>
+    <servlet-name>CandidateServlet</servlet-name>
+    <servlet-class>com.simplilearn.servlets.CandidateServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CandidateServlet</servlet-name>
+    <url-pattern>/student</url-pattern>
+  </servlet-mapping>
 </web-app>

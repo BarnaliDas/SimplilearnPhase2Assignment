@@ -24,7 +24,7 @@ public class Students {
 	 String studentName;
 	
 	@ManyToOne(cascade={CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH},
-			fetch=FetchType.LAZY)
+			fetch=FetchType.EAGER)
 	@JoinColumn(name="lastm_class_id")
 	Classes studentClasses;
 	
@@ -52,18 +52,18 @@ public class Students {
 		this.studentName = studentName;
 	}
 
-	
-	public Classes getClasses() {
-		return studentClasses;
-	}
-
-	public void setClasses(Classes classes) {
-		this.studentClasses = classes;
-	}
 
 	@Override
 	public String toString() {
 		return "Students [id=" + id + ", studentName=" + studentName  + "]";
+	}
+
+	public Classes getStudentClasses() {
+		return studentClasses;
+	}
+
+	public void setStudentClasses(Classes studentClasses) {
+		this.studentClasses = studentClasses;
 	}
 	
 }

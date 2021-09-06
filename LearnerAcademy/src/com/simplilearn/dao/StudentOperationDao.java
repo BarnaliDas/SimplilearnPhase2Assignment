@@ -39,7 +39,7 @@ public class StudentOperationDao {
             transaction = session.beginTransaction();
             // save the class object
             studentList=session.createQuery("from Students").getResultList();
-           
+           // System.out.println(studentList.get(0).getStudentName()+" :: "+studentList.get(0).getClasses().getClassName());
             // commit transaction
             transaction.commit();
         } catch (Exception e) {
@@ -47,6 +47,11 @@ public class StudentOperationDao {
                 transaction.rollback();
             }
             e.printStackTrace();
+        }
+        if(studentList.size()>0){
+        	for(Students std:studentList){
+        		 System.out.println(std.getStudentName()+" :: "+std.getStudentClasses().getClassName());
+        	}
         }
 		return studentList;
 	}

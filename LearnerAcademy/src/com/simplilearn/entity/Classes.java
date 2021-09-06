@@ -63,7 +63,7 @@ public class Classes {
 			studentlist=new ArrayList<Students>();
 		}
 		studentlist.add(students);
-		students.setClasses(this);
+		students.setStudentClasses(this);
 	}
 
 	public List<Students> getStudentlist() {
