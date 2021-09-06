@@ -7,11 +7,18 @@
 <title>Add new class</title>
 </head>
 <body>
+<center>
+  <h1>LEANER'S ACADEMY</h1>
+        
+ </center>
+    <div align="center">
+ 
 <form action="saveClasses" method="post">
 
 Enter Class name:<input type="text">
 <input type="submit"  value="Add">
 
 </form>
+</div>
 </body>
 </html>

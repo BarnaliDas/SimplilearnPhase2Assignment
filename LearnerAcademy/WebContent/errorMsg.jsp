@@ -1,24 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Add New Teacher</title>
+<title>Error Page</title>
 </head>
 <body>
-<center>
-  <h1>LEANER'S ACADEMY</h1>
-        
- </center>
-    <div align="center">
- 
-<form action="saveTeacher">
-Enter Teacher Name:<input type="text">
-
-<input type="submit" value="Add">
-
-</form>
+<div align="center">
+<c:out value="${errorMsg}"></c:out>
 </div>
 </body>
 </html>

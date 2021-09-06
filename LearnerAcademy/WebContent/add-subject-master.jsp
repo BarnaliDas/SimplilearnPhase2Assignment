@@ -7,11 +7,18 @@
 <title>Add New Subject</title>
 </head>
 <body>
+<center>
+  <h1>LEANER'S ACADEMY</h1>
+        
+ </center>
+    <div align="center">
+ 
 <form action="saveSubject">
 
 Enter Subject Name:<input type="text">
 <input type="submit"  value="Add">
 
 </form>
+</div>
 </body>
 </html>

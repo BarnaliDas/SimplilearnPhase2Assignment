@@ -17,9 +17,9 @@
         <table border="1" cellpadding="5">
             <caption><h2>List of Students</h2></caption>
             <tr>
-                <th>ID</th>
-                <th>Name</th>
-          	  <th>Class</th>
+                <th>Student ID</th>
+                <th>Student Name</th>
+          	  <th>Class Enrolled</th>
                 
             </tr>
             <c:forEach var="stu" items="${listStudent}">
