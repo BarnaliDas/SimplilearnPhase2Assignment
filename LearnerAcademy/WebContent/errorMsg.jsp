@@ -9,7 +9,7 @@
 </head>
 <body>
 <div align="center">
-<c:out value="${errorMsg}"></c:out>
+<c:out value="${errorMsg}"></c:out><a href="index.jsp">Click here to Login</a>
 </div>
 </body>
 </html>

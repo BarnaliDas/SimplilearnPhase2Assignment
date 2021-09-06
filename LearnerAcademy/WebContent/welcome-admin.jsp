@@ -18,7 +18,7 @@
 Welcome <c:out value="${userid}" />
 <ul>
 <li><a href="add-class-master.jsp">Add New Class Details</a></li>
-<li><a href="addSubject">Add New Subject Details</a></li>
+<li><a href="add-subject-master.jsp">Add New Subject Details</a></li>
 <li><a href="addTeacher">Add New Teacher Details</a></li>
 <li><a href="mapSubject">Add Subject to Class </a></li>
 <li><a href="mapTeacher">Add Teacher to Sujects of Class</a></li>

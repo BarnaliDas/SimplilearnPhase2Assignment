@@ -39,4 +39,14 @@
     <servlet-name>SaveClass</servlet-name>
     <url-pattern>/SaveClass</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>SubjectServlet</display-name>
+    <servlet-name>SubjectServlet</servlet-name>
+    <servlet-class>com.simplilearn.servlets.SubjectServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SubjectServlet</servlet-name>
+    <url-pattern>/SubjectServlet</url-pattern>
+  </servlet-mapping>
 </web-app>

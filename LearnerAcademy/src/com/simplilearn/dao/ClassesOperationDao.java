@@ -28,7 +28,7 @@ public class ClassesOperationDao {
             if (transaction != null) {
                 transaction.rollback();
             }
-            e.printStackTrace();
+         //   e.printStackTrace();
             savecount=0;
         }
         return savecount;
