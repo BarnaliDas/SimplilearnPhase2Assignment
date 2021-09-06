@@ -11,7 +11,8 @@ import com.simplilearn.entity.Classes;
 
 public class ClassesOperationDao {
 
-	public void SaveClassDetails(Classes classesdtl){
+	public int SaveClassDetails(Classes classesdtl){
+		int savecount=0;
 		Transaction transaction = null;
         try {
             // start a transaction
@@ -22,13 +23,15 @@ public class ClassesOperationDao {
             session.save(classesdtl);
             // commit transaction
             transaction.commit();
+            savecount=1;
         } catch (Exception e) {
             if (transaction != null) {
                 transaction.rollback();
             }
             e.printStackTrace();
+            savecount=0;
         }
-        
+        return savecount;
 	}
 	
 	public List<Classes> getAllClasses(){

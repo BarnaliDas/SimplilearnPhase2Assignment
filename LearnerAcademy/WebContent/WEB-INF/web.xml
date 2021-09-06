@@ -29,4 +29,14 @@
     <servlet-name>LoginUser</servlet-name>
     <url-pattern>/LoginUser</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>SaveClass</display-name>
+    <servlet-name>SaveClass</servlet-name>
+    <servlet-class>com.simplilearn.servlets.SaveClass</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SaveClass</servlet-name>
+    <url-pattern>/SaveClass</url-pattern>
+  </servlet-mapping>
 </web-app>
