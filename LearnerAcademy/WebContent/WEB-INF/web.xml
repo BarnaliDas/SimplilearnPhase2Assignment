@@ -49,4 +49,14 @@
     <servlet-name>SubjectServlet</servlet-name>
     <url-pattern>/SubjectServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>TeacherServlet</display-name>
+    <servlet-name>TeacherServlet</servlet-name>
+    <servlet-class>com.simplilearn.servlets.TeacherServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>TeacherServlet</servlet-name>
+    <url-pattern>/TeacherServlet</url-pattern>
+  </servlet-mapping>
 </web-app>

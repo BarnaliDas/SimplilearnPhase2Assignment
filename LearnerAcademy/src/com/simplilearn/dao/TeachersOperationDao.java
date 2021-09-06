@@ -10,7 +10,8 @@ import com.simplilearn.entity.Teachers;
 
 public class TeachersOperationDao {
 
-	public void SaveTeacherDetails(Teachers teacherdtl){
+	public int SaveTeacherDetails(Teachers teacherdtl){
+		int savecount=0;
 		Transaction transaction = null;
         try {
             // start a transaction
@@ -20,13 +21,15 @@ public class TeachersOperationDao {
             session.save(teacherdtl);
             // commit transaction
             transaction.commit();
+            savecount=1;
         } catch (Exception e) {
             if (transaction != null) {
                 transaction.rollback();
             }
-            e.printStackTrace();
+          //  e.printStackTrace();
+            savecount=0;
         }
-        
+       return savecount; 
 	}
 	
 	public List<Teachers> getAllTeachers(){
