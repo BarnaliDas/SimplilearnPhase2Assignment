@@ -4,9 +4,14 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Add New Teacher</title>
 </head>
 <body>
+<form action="saveTeacher">
+Enter Teacher Name:<input type="text">
 
+<input type="submit" value="Add">
+
+</form>
 </body>
 </html>

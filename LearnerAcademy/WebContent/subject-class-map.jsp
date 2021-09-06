@@ -4,9 +4,16 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Subject Mapping</title>
 </head>
 <body>
+<form action="addSubjectMapping">
+<!-- show list of subject -->
 
+<!-- show list of class -->
+
+<!-- save combination mapping  -->
+
+</form>
 </body>
 </html>

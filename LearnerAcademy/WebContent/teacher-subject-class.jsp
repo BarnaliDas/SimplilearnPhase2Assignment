@@ -4,9 +4,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Add Teacher Mapping</title>
 </head>
 <body>
+<!-- show list of subject-class mapping -->
 
+<!-- show list of teacher -->
+
+<!-- save combination mapping  -->
 </body>
 </html>

@@ -4,9 +4,9 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Class Report</title>
 </head>
 <body>
-
+<!-- Show all the class mapping with subject , teachers and student in table -->
 </body>
 </html>
