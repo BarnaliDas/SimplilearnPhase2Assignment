@@ -31,13 +31,13 @@
   </servlet-mapping>
   <servlet>
     <description></description>
-    <display-name>SaveClass</display-name>
-    <servlet-name>SaveClass</servlet-name>
-    <servlet-class>com.simplilearn.servlets.SaveClass</servlet-class>
+    <display-name>ClassServlet</display-name>
+    <servlet-name>ClassServlet</servlet-name>
+    <servlet-class>com.simplilearn.servlets.ClassServlet</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>SaveClass</servlet-name>
-    <url-pattern>/SaveClass</url-pattern>
+    <servlet-name>ClassServlet</servlet-name>
+    <url-pattern>/saveClass</url-pattern>
   </servlet-mapping>
   <servlet>
     <description></description>
@@ -47,7 +47,7 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>SubjectServlet</servlet-name>
-    <url-pattern>/SubjectServlet</url-pattern>
+    <url-pattern>/saveSubject</url-pattern>
   </servlet-mapping>
   <servlet>
     <description></description>
@@ -57,6 +57,26 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>TeacherServlet</servlet-name>
-    <url-pattern>/TeacherServlet</url-pattern>
+    <url-pattern>/saveTeacher</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>GetDetailSubjectClass</display-name>
+    <servlet-name>GetDetailSubjectClass</servlet-name>
+    <servlet-class>com.simplilearn.servlets.GetDetailSubjectClass</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>GetDetailSubjectClass</servlet-name>
+    <url-pattern>/subjectMapList</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>addSubjectMapping</display-name>
+    <servlet-name>addSubjectMapping</servlet-name>
+    <servlet-class>com.simplilearn.servlets.addSubjectMapping</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>addSubjectMapping</servlet-name>
+    <url-pattern>/addSubjectMapping</url-pattern>
   </servlet-mapping>
 </web-app>

@@ -15,7 +15,7 @@ import com.simplilearn.entity.Teachers;
 /**
  * Servlet implementation class TeacherServlet
  */
-@WebServlet("/saveClass")
+
 public class TeacherServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -44,7 +44,7 @@ public class TeacherServlet extends HttpServlet {
 		if(count>0){
 	        String successMsg="New Teacher added to master";
 	        request.setAttribute("successMsg", successMsg);
-	        RequestDispatcher dispatcher = request.getRequestDispatcher("add-tacher-master.jsp");
+	        RequestDispatcher dispatcher = request.getRequestDispatcher("add-teacher-master.jsp");
 	        dispatcher.forward(request, response);
 	        }
 	else{

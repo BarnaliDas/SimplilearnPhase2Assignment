@@ -63,7 +63,7 @@ public class ClassesOperationDao {
             transaction = session.beginTransaction();
             
             // save the class object
-            c1=session.createQuery("from Classes where className= '"+name+"'").getResultList();
+            c1=session.createQuery("from Classes where id= '"+Integer.parseInt(name)+"'").getResultList();
            
             // commit transaction
             transaction.commit();

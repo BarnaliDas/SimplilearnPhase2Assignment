@@ -14,7 +14,8 @@ import com.simplilearn.entity.Teachers;
 public class SubjectClassOperationDao {
 
 	
-	public void saveSubjectClassMapping(Subjects sub, Classes classes){
+	public int saveSubjectClassMapping(Subjects sub, Classes classes){
+		int save=0;
 		Transaction transaction = null;
         try {
             // start a transaction
@@ -26,13 +27,15 @@ public class SubjectClassOperationDao {
             session.save(scm);
             // commit transaction
             transaction.commit();
+            save=1;
         } catch (Exception e) {
             if (transaction != null) {
                 transaction.rollback();
             }
-            e.printStackTrace();
+          //  e.printStackTrace();
+            save=0;
         }
-        
+      return save;  
 	}
 	
 	

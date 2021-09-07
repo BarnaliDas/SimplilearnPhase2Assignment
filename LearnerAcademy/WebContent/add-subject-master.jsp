@@ -14,7 +14,7 @@
  </center>
     <div align="center">
  
-<form action="saveSubject">
+<form action="saveSubject" method="post">
 <c:if test="${successMsg !=''}">
 <p style="color: green"><c:out value="${successMsg}"/></p>
 </c:if>

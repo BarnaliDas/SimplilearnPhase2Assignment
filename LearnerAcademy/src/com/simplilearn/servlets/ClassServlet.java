@@ -18,7 +18,7 @@ import com.simplilearn.entity.Students;
 /**
  * Servlet implementation class SaveClass
  */
-@WebServlet("/saveClass")
+
 public class ClassServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

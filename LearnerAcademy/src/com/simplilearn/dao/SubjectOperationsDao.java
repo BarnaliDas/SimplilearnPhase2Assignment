@@ -63,7 +63,7 @@ public class SubjectOperationsDao {
         	Session session = HibernateConfiguration.getSessionFactory().openSession();
             transaction = session.beginTransaction();
             // save the class object
-            subjectList=session.createQuery("from Subjects where subjectName= '"+name+"'").getResultList();
+            subjectList=session.createQuery("from Subjects where id= '"+Integer.parseInt(name)+"'").getResultList();
            
             // commit transaction
             transaction.commit();
